@@ -9,6 +9,12 @@ ON Products.CategoryID = Categories.CategoryID
 
 ### Display the OrderID and ShipperName for all orders placed before January 9, 1997. Shows 161 records.
 
+SELECT OrderID, ShipperName 
+FROM Orders AS o
+JOIN Shippers AS s
+ON o.ShipperID = s.ShipperID
+WHERE OrderDate < "1997-01-09"
+
 ### Display all ProductNames and Quantities placed on order 10251. Sort by ProductName. Shows 3 records.
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
