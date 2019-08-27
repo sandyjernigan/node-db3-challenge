@@ -36,10 +36,15 @@ function findSteps(id) {
 }
 
 // add(scheme):
-// Expects a scheme object.
-// Inserts scheme into the database.
-// Resolves to the newly inserted scheme, including id.
-function add(scheme) {}
+  // Expects a scheme object.
+  // Inserts scheme into the database.
+  // Resolves to the newly inserted scheme, including id.
+function add(scheme) {
+  return db('schemes').insert(scheme)
+  .then(ids => {
+    return findById(ids[0]);
+  });
+}
 
 // update(changes, id):
 // Expects a changes object and an id.
