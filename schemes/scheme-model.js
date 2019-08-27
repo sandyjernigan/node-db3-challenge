@@ -9,12 +9,11 @@ module.exports = {
   remove
 };
 
-
 // find():
-// Calling find returns a promise that resolves to an array of all schemes in the database.
-// No steps are included.
-function find() {}
-
+  // Calling find returns a promise that resolves to an array of all schemes in the database.
+function find() {
+  return db('schemes');
+}
 
 // findById(id):
 // Expects a scheme id as its only parameter.
