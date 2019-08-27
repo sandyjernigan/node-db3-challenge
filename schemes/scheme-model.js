@@ -16,10 +16,12 @@ function find() {
 }
 
 // findById(id):
-// Expects a scheme id as its only parameter.
-// Resolve to a single scheme object.
-// On an invalid id, resolves to null.
-function findById(id) {}
+  // Expects a scheme id as its only parameter.
+  // Resolve to a single scheme object.
+  // On an invalid id, resolves to null.
+function findById(id) {
+  return db('schemes').where({ id }).first();
+}
 
 // findSteps(id):
 // Expects a scheme id.
