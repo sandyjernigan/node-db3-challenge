@@ -97,7 +97,6 @@ router.delete('/:id', async (req, res) => {
 
   try {
     const deleted = await Schemes.remove(id);
-
     if (deleted) {
       res.json({ removed: deleted });
     } else {

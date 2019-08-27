@@ -59,8 +59,9 @@ function update(changes, id) {
 
 
 // remove(id):
-// Removes the scheme object with the provided id.
-// Resolves to the removed scheme
-// Resolves to null on an invalid id.
-// (Hint: Only worry about removing the scheme. The database is configured to automatically remove all associated steps.)
-function remove(id) {}
+  // Removes the scheme object with the provided id.
+  // Resolves to the removed scheme
+  // Resolves to null on an invalid id.
+function remove(id) {
+  return db('schemes').where({ id }).del();
+}
