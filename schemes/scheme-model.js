@@ -47,10 +47,15 @@ function add(scheme) {
 }
 
 // update(changes, id):
-// Expects a changes object and an id.
-// Updates the scheme with the given id.
-// Resolves to the newly updated scheme object.
-function update(changes, id) {}
+  // Expects a changes object and an id.
+  // Updates the scheme with the given id.
+  // Resolves to the newly updated scheme object.
+function update(changes, id) {
+  return db('schemes').where({ id }).update(changes)
+  .then(count => {
+    return findById(id);
+  });
+}
 
 
 // remove(id):
